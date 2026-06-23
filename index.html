@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Showstopper Cakes by Jamila | Leicester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        :root {
+            --cream: #FDFBF7;
+            --soft-pink: #FFF0F2;
+            --dark-berry: #2C1A1D;
+            --gold: #D4AF37;
+            --muted-gold: #AA7C11;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark-berry);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background-color: var(--dark-berry);
+            color: var(--soft-pink);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+        .announcement-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(253, 251, 247, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .logo {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--dark-berry);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-berry);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .cta-btn {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .cta-btn:hover {
+            background-color: var(--muted-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(253,251,247,0.8), rgba(253,251,247,0.9)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200') center/cover no-repeat;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark-berry);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: #554144;
+        }
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--dark-berry);
+            border: 1px solid var(--dark-berry);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .secondary-btn:hover {
+            background-color: var(--dark-berry);
+            color: var(--white);
+        }
+
+        /* Grid Categories */
+        .section-padding {
+            padding: 100px 5%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: var(--gold);
+            margin: 15px auto 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-img-placeholder {
+            height: 350px;
+            background-color: var(--soft-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #b58d93;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-content {
+            padding: 30px;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .card-content p {
+            font-size: 0.95rem;
+            color: #665255;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* Sensory Highlight Section */
+        .sensory-section {
+            background-color: var(--soft-pink);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .sensory-half {
+            flex: 1;
+            min-width: 300px;
+            padding: 80px 10%;
+        }
+        .sensory-img {
+            background: url('https://images.unsplash.com/photo-1535141192574-5d4897c13636?q=80&w=800') center/cover;
+            min-height: 500px;
+        }
+        .sensory-half h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+        .sensory-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+        .sensory-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        .sensory-features li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Reviews Slider */
+        .reviews-section {
+            background-color: var(--white);
+            text-align: center;
+        }
+        .review-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 200px;
+        }
+        .review-card {
+            display: none;
+            padding: 20px;
+        }
+        .review-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .review-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark-berry);
+        }
+        .review-author {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Dynamic Booking Form */
+        .booking-section {
+            background-color: var(--cream);
+        }
+        .form-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E2DCD5;
+            background-color: var(--cream);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--dark-berry);
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .form-submit {
+            width: 100%;
+            background-color: var(--dark-berry);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .form-submit:hover {
+            background-color: #442a2e;
+        }
+
+        /* Footer Hub */
+        footer {
+            background-color: #F4EFE9;
+            padding: 80px 5% 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+        .footer-col h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .footer-col p, .footer-col a {
+            font-size: 0.95rem;
+            color: #665255;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 300;
+        }
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #E2DCD5;
+            padding-top: 30px;
+            font-size: 0.85rem;
+            color: #887376;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            nav { flex-direction: column; gap: 15px; text-align: center; }
+            .nav-links { gap: 15px; }
+            .sensory-half { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        ✨ Need a showstopper cake on short notice? Jamila accommodates fast-turnaround requests based on availability! <a href="tel:07547554323">Call/WhatsApp 07547 554323</a>
+    </div>
+
+    <nav>
+        <div class="logo">JAMILA'S</div>
+        <ul class="nav-links">
+            <li><a href="#gallery">The Gallery</a></li>
+            <li><a href="#artistry">Our Artistry</a></li>
+            <li><a href="#book">Book a Consultation</a></li>
+        </ul>
+        <a href="#book" class="cta-btn">Enquire Online</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Bespoke Showstopper Cakes in Leicester</h1>
+            <p>Handcrafted by Jamila to look breathtaking and taste extraordinary. From elegant metallic macarons to vibrant themed celebrations, we bake perfection into every single layer.</p>
+            <div class="hero-btns">
+                <a href="#book" class="cta-btn">Book Your Custom Cake</a>
+                <a href="#gallery" class="secondary-btn">View Cupcake Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding">
+        <h2 class="section-title" data-aos="fade-up">Visual Product Categories</h2>
+        <div class="grid-container">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=500');">
+                    </div>
+                <div class="card-content">
+                    <h3>Bespoke Birthday Cakes</h3>
+                    <p>Elegant, stylish, and entirely customized. Designed to be the unforgettable centerpiece of your celebration.</p>
+                    <a href="#book" class="secondary-btn">Design a Birthday Cake</a>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1558961317-194342a086cd?q=80&w=500');">
+                    </div>
+                <div class="card-content">
+                    <h3>Themed & Kids Celebrations</h3>
+                    <p>From magical under-the-sea motifs to detailed custom themes, we bring your child's imagination to life in premium sugar art.</p>
+                    <a href="#book" class="secondary-btn">View Novelty Designs</a>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=500');">
+                    </div>
+                <div class="card-content">
+                    <h3>Luxury Cupcakes</h3>
+                    <p>Perfect for corporate gifting or intimate events. Creamy, detailed piped buttercream roses dusted with elegant gold sprinkles.</p>
+                    <a href="#book" class="secondary-btn">Order a Box of 12</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artistry" class="sensory-section">
+        <div class="sensory-half sensory-img" data-aos="fade-right"></div>
+        <div class="sensory-half" data-aos="fade-left">
+            <h2>Crafted with Premium Ingredients, Baked to Perfection.</h2>
+            <p style="font-weight: 300; color: #554144;">We don't believe in choosing style over substance. Every showstopper design features rich premium components tailored to absolute perfection:</p>
+            <ul class="sensory-features">
+                <li><strong>Handcrafted Toppings:</strong> Luxury French macarons delicately hand-painted in edible golds, bronzes, and metallics.</li>
+                <li><strong>Fresh Elements:</strong> Hand-selected seasonal woodland berries and stunning organic floral blooms.</li>
+                <li><strong>Gourmet Fillings:</strong> Decadent luxury chocolate drips, salted caramel centers, and rich premium Swiss meringue buttercream.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-padding reviews-section">
+        <div class="review-container" data-aos="zoom-in">
+            <div class="review-card active">
+                <p class="review-text">"12 cupcakes just delivered... Chocolate with salted caramel centres, fantastic taste. Great service!"</p>
+                <p class="review-author">— eugb_13</p>
+            </div>
+            <div class="review-card">
+                <p class="review-text">"Jamila prepared an exceptional birthday cake in a few hours' notice. It looked so much more beautiful than I expected."</p>
+                <p class="review-author">— Zaid A.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="section-padding booking-section">
+        <h2 class="section-title" data-aos="fade-up">Start Your Cake Journey</h2>
+        <div class="form-container" data-aos="fade-up" data-aos-delay="100">
+            <form id="cakeEnquiryForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" id="name" required placeholder="e.g. Sarah Jenkins">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp Number</label>
+                    <input type="tel" id="phone" required placeholder="e.g. 07123 456789">
+                </div>
+                <div class="form-group">
+                    <label for="date">Event Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="style">Desired Style Style</label>
+                    <select id="style">
+                        <option value="birthday-gold">Elegant Gold Drip & Floral (Asiya/Krupali Style)</option>
+                        <option value="berry-chocolate">Rich Chocolate Drip & Fresh Berries (Beejay Style)</option>
+                        <option value="kids-themed">Themed / Novelty Child Celebrations</option>
+                        <option value="cupcakes">Luxury Piped Rose Cupcakes (Box of 12)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Design Details or Special Requests</label>
+                    <textarea id="notes" rows="4" placeholder="Mention preferred flavors, text for calligraphy toppers, or last-minute turnaround needs..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit Enquiry to Jamila</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Ready to Discuss Your Vision?</h4>
+                <p>Whether you have months to plan out a detailed setup or need a last-minute celebratory miracle, Jamila is ready to craft your masterpiece.</p>
+            </div>
+            <div class="footer-col">
+                <h4>📍 Visit Us</h4>
+                <p>50 Harris Rd<br>Leicester<br>LE4 0QX</p>
+            </div>
+            <div class="footer-col">
+                <h4>📞 Get in Touch</h4>
+                <a href="tel:07547554323">Phone / WhatsApp: 07547 554323</a>
+                <a href="mailto:orders@bakerydelights.co.uk">Email: orders@bakerydelights.co.uk</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jamila's Bakery Delights. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Review Slider Logic
+        const reviews = document.querySelectorAll('.review-card');
+        let currentReview = 0;
+        setInterval(() => {
+            reviews[currentReview].classList.remove('active');
+            currentReview = (currentReview + 1) % reviews.length;
+            reviews[currentReview].classList.add('active');
+        }, 5000);
+
+        // Enquiry Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const styleElement = document.getElementById('style');
+            const styleText = styleElement.options[styleElement.selectedIndex].text;
+            
+            alert(`Thank you, ${name}! Your enquiry for the "${styleText}" design has been simulated. In production, this directly routes details straight to Jamila's orders workflow.`);
+            document.getElementById('cakeEnquiryForm').reset();
+        }
+    </script>
+</body>
+</html>
